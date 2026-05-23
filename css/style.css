@@ -165,76 +165,132 @@ p {
         }
       }
     }
-    .header__input {
-      display: flex;
-      align-items: center;
-      column-gap: 24px;
-      position: relative;
-      label {
-        display: block;
-        margin-block-end: 8px;
-      }
-      input[type="text"] {
-        display: block;
-        width: 238px;
-        height: 61px;
-        background: var(--white);
-        border: 1px solid var(--grey-500);
-        padding: 16px 24px;
-        border-radius: 12px;
-
-        &::placeholder {
-          width: 131px;
-          height: 29px;
-          font-weight: 600;
-          font-size: 24px;
-          line-height: 29px;
-          letter-spacing: -0.05em;
-          color: var(--grey-500);
-        }
-      }
-      .symbol {
-        position: absolute;
+    input[type="text"] {
+      background: var(--white);
+      border: 1px solid var(--grey-500);
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 29px;
+      letter-spacing: -0.05em;
+      color: var(--blue-900);
+      &::placeholder {
         font-weight: 600;
         font-size: 24px;
         line-height: 29px;
         letter-spacing: -0.05em;
-        color: var(--blue-500);
-        top: 0;
-        left: 0;
-      }
-      .cm {
-        top: 38px;
-        left: 189px;
-      }
-      .kg {
-        top: 38px;
-        left: 458px;
+        color: var(--grey-500);
       }
     }
-    .bmi-result {
-      width: 500px;
-      height: 130px;
-      background: var(--blue-500);
-      border-radius: 16px 999px 999px 16px;
-      padding: 32px;
-      h4 {
-        font-weight: 600;
-        font-size: 24px;
-        line-height: 29px;
-        letter-spacing: -0.05em;
-        color: var(--white);
-        margin-block: 0 16px;
+    label {
+      display: block;
+      margin-block-end: 8px;
+    }
+    .symbol {
+      position: absolute;
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 29px;
+      letter-spacing: -0.05em;
+      color: var(--blue-500);
+      top: 0;
+      left: 0;
+    }
+    .header__input.metric {
+      position: relative;
+      .header__input-height,
+      .header__input-weight {
+        display: inline-block;
+        margin-inline-start: 15px; /* Отступ между инпутами */
+        vertical-align: middle; /* Выравнивание по вертикали */
+        input[type="text"] {
+          display: block;
+          width: 238px;
+          height: 61px;
+          padding: 16px 24px;
+          &::placeholder {
+            width: 131px;
+            height: 29px;
+            font-weight: 600;
+            font-size: 24px;
+            line-height: 29px;
+            letter-spacing: -0.05em;
+            color: var(--grey-500);
+          }
+        }
+        .cm {
+          top: 38px;
+          left: 189px;
+        }
+        .kg {
+          top: 38px;
+          left: 458px;
+        }
       }
-      p {
-        font-size: 14px;
-        line-height: 150%;
-        color: var(--white);
-        margin-block: 0;
+    }
+    .header__input.imperial {
+      /* position: relative; */
+      .header__input-height,
+      .header__input-weight {
+        position: relative;
+        font-size: 0;
+        label {
+          font-size: 14px;
+        }
+        input[type="text"] {
+          display: inline-block;
+          font-size: 24px;
+          margin-inline-start: 13px;
+          vertical-align: middle;
+          width: 238px;
+          height: 77px;
+          padding: 24px;
+        }
+      }
+      .header__input-height {
+        margin-block-end: 24px;
+      }
+      .ft {
+        top: 50px;
+        left: 206px;
+      }
+      .in {
+        top: 50px;
+        left: 460px;
+      }
+      .st {
+        top: 50px;
+        left: 206px;
+      }
+      .lbs {
+        top: 50px;
+        left: 460px;
       }
     }
   }
+  .bmi-result {
+    width: 500px;
+    height: 130px;
+    background: var(--blue-500);
+    border-radius: 16px 999px 999px 16px;
+    padding: 32px;
+    h4 {
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 29px;
+      letter-spacing: -0.05em;
+      color: var(--white);
+      margin-block: 0 16px;
+    }
+    p {
+      font-size: 14px;
+      line-height: 150%;
+      color: var(--white);
+      margin-block: 0;
+    }
+  }
 }
+
 .hero {
   display: flex;
   align-items: center;

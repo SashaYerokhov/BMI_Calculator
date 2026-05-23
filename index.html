@@ -38,8 +38,9 @@
                 ><input
                   type="radio"
                   name="radio"
-                  value="Metric"
+                  value="metric"
                   id="radioMetric"
+                  data-show="metric-fields"
                 />
                 Metric</label
               >
@@ -49,14 +50,15 @@
                 ><input
                   type="radio"
                   name="radio"
-                  value="Imperial"
+                  value="imperial"
                   id="radioImperial"
+                  data-show="imperial-fields"
                 />
                 Imperial</label
               >
             </div>
           </div>
-          <div class="header__input metric">
+          <div class="header__input metric" id="metric-fields" hidden>
             <div class="header__input-height">
               <label for="inputHeight">Height</label>
               <input
@@ -82,6 +84,54 @@
                 required
               />
               <span class="symbol kg">kg</span>
+            </div>
+          </div>
+          <div class="header__input imperial" id="imperial-fields">
+            <div class="header__input-height">
+              <label for="inputHeight">Height</label>
+              <input
+                type="text"
+                name="inputHeight"
+                id="inputHeightFt"
+                inputmode="numeric"
+                maxlength="1"
+                placeholder="0"
+                required
+              />
+              <span class="symbol ft">ft</span>
+              <input
+                type="text"
+                name="inputHeight"
+                id="inputHeightIn"
+                inputmode="numeric"
+                maxlength="2"
+                placeholder="0"
+                required
+              />
+              <span class="symbol in">in</span>
+            </div>
+            <div class="header__input-weight">
+              <label for="inputWeight">Weight</label>
+              <input
+                type="text"
+                name="inputWeight"
+                id="inputWeightSt"
+                inputmode="numeric"
+                maxlength="2"
+                placeholder="0"
+                required
+              />
+              <span class="symbol st">st</span>
+              <input
+                type="text"
+                name="inputWeight"
+                id="inputWeightLbs"
+                inputmode="numeric"
+                maxlength="2"
+                placeholder="0"
+                required
+              />
+              <span class="symbol lbs">lbs</span>
             </div>
           </div>
           <div class="bmi-result">
