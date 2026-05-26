@@ -127,17 +127,24 @@
                 name="inputWeight"
                 id="inputWeightLbs"
                 inputmode="numeric"
-                maxlength="2"
+                maxlength="3"
                 placeholder="0"
                 required
               />
               <span class="symbol lbs">lbs</span>
             </div>
           </div>
-          <div class="bmi-result">
+          <div class="bmi-result empty">
             <h4>Welcome!</h4>
             <p>
               Enter your height and weight and you'll see your BMI result here
+            </p>
+          </div>
+          <div class="bmi-result full">
+            <p class="full__title">Your BMI is... <span id="result">23.4</span></p>
+            <p class="full__text">
+              Your BMI suggests you're a healthy weight. Your ideal weight is
+              between <span id="recommendation-weight">63.3kgs-85.2kgs</span>
             </p>
           </div>
         </form>

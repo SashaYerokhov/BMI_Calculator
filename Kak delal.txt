@@ -1,0 +1,259 @@
+/**
+ * Алгоритм рассчетм ИМТ
+ * 1. Инициализация данных
+ * Создать переменную для вес пользователя в килограммах (например, weight)
+ * Создать переменную для роста пользователя в сантиметрах (например, heightCm)
+ *
+ * 2. Подготовка данных
+ * Перевести рост из сантиметров в метры: разделить heightCm на 100 и записать в переменну heightM.
+ *
+ * 3. Вычисление ИМТ
+ * Возвести рост в метрах (heightM) в квадрат.
+ * Разделить вес (weight) на полученный квадрат роста.
+ * Округлить результат до одного или двух знаков после запятой с помощью метода toFixed().
+ * Сохранить финльное число в переменную bmi.
+ *
+ * 4. Интерпретация результата
+ *
+ * Использовать условные конструкции (if / else if / else) для проверки значение bmi
+ * - Если bmi меньше 18.5 - вес недостаточный
+ * - Если bmi от 18.5 до 24.9 - вес в норме
+ * - Если bmi от 25 до 29.9 - избыточный вес (предожирение)
+ * - Если bmi равен 30  или больше - ожирение
+ *
+ * 5. Вывод
+ * Вернуть или отобразить пользователю текстовое сообщеие с его числовым ИМТ и соответствующей категорией
+
+let wight = 112;
+ let height = 188;
+ let result = wight / ((height / 100) ** 2);
+ let bmi = result.toFixed(2);
+ console.log(bmi);
+
+ * 
+ * 
+ * Для перевода килограммов (кг) в стоуны и фунты нужно разделить вес на (6,35029). 
+ * Полученное целое число — это стоуны,  * 
+ * а остаток (десятичную дробь) умножают на (14),  * 
+ * чтобы получить фунты.
+ * 
+ *  Базовые соотношения 
+ * 1 стоун (st) = 6,35029318 кг
+ * 1 фунт (lb) = 0,45359237  кг
+ * Пример: переведем 70 кг в стоуны и фунты.
+ * Делим: 70 / 6,35029318 получаем 11,0231 стоуна
+ * Стоуны: 11 st.
+ * Вычисляем остаток фунтов: 0,0231 х 14 = 0,32 
+ * Итог: 11st 0,32lb или 11st 1lb.
+
+Перевод веса тела из килограммов в стоуны и фунты 
+let myWeight = 120;
+ let myWeightSt = myWeight / 6.35029318
+ let weightSt = Number(myWeightSt.toFixed());
+//  console.log(weightSt); // 18
+let decimalPart = parseFloat((myWeightSt % 1).toFixed(4));
+// console.log(decimalPart); // 0.1094
+let weightLBSFull = decimalPart * 14;
+let weightLBS = weightLBSFull.toFixed()
+let weightMy = `Мой вес равен ${weightSt}st ${weightLBS}lbs`;
+// console.log(weightMy); // Мой вес равен 19st 13lbs
+
+
+Добрый день! У меня есть число 18.1094.
+Как при помощи JavaScript получить два отдельных числа 18 и 1094?
+По поводу получения числа 18 у меня вопросов нет при помощи toFixed(),
+А как отдельно получить 1094?
+ 
+ * 
+ * Для быстрого перевода сантиметров в футы и дюймы разделите исходное число на 2,54, чтобы узнать общую длину в дюймах, а затем разделите полученный результат на 12: целая часть будет футами, а остаток — дюймами
+ * 
+ * Инструкция для ручного расчетаБазовые величины: 
+ * 1 дюйм = 2,54см; 
+ * 1 фут = 12 дюймам (30,48)см.
+ * Шаг 1: Разделите сантиметры на 2,54, чтобы получить длину в дюймах.
+ * Шаг 2: Разделите дюймы на 12. Целая часть полученного числа — это футы.
+ * Шаг 3: Умножьте целое число футов на 12 и вычтите результат из общего числа дюймов (из Шага 1). Полученный остаток — это дюймы.
+ * 
+ * Пример для 175 см:
+ * 175 / 2,54 = 68,897 дюймов.
+ * 68,897 / 12 = 5,741 (значит, полных 5 футов).
+ * 68,897 - (5 х 12) = 68,897 - 60 = 8,897 (примерно 9 дюймов).
+ Результат: 175 см = 5 футов 9 дюймов.
+
+ Введенный инпут нужно разделить на постоянное число 2,54 - и записать в 1-ю переменную
+ Полученную 1-ю переменную нужно разделить на 12 и полученную 2-ю переменную 
+ при помощи метода toFixed() записать в инпут - футы
+ 1-ю переменную вычесть (-) (кот записана в инпут умножить (х) 12 ) получаем 3-ю переменную округляем в большую сторону
+ метод Math.ceil()
+
+Расчет перевод роста из сантиметров в футы и дюймы
+let myHeight = 188;
+let myHeightIn = 188 / 2.54;
+// console.log(myHeightIn); // 74.01574803149606
+let myHeightFt = myHeightIn / 12;
+let heightFt = Number(myHeightFt.toFixed());
+// console.log(heightFt); // 6
+let myHeightIm = myHeightIn - (heightFt * 12);
+// console.log(myHeightIm); // 2.0157480314960594
+let heightIn = Math.floor(myHeightIm)
+ let heightMy = `Мой рост в ${heightFt} ft ${heightIn} in`
+//  console.log(heightMy) // Мой рост в 6 ft 2 in
+
+
+
+ */
+Чтобы вывести результат из двух input без кнопки Submit, нужно отслеживать событие ввода (например, input) в обоих полях и сразу же обновлять область вывода с помощью JavaScript.
+
+ <input type="number" id="num1" placeholder="Число 1">
+<input type="number" id="num2" placeholder="Число 2">
+
+<p>Результат: <span id="result">0</span></p>
+
+<script>
+  // Находим элементы на странице
+  const input1 = document.getElementById('num1');
+  const input2 = document.getElementById('num2');
+  const resultOutput = document.getElementById('result');
+
+  // Функция для обновления результата
+  function updateResult() {
+    const val1 = parseFloat(input1.value) || 0;
+    const val2 = parseFloat(input2.value) || 0;
+    resultOutput.textContent = val1 + val2;
+  }
+
+  // Добавляем слушатели событий для обоих полей
+  input1.addEventListener('input', updateResult);
+  input2.addEventListener('input', updateResult);
+</script>
+
+Как это работает:Событие input срабатывает моментально при каждом нажатии клавиши или вставке текста.Функция updateResult считывает текущие значения. Метод parseFloat() превращает их в числа, а || 0 защищает от ошибок, если поле пустое.Результат сразу записывается в тег <span>.Если вам нужно не сложение, а просто объединение (конкатенация) строк, замените строку в функции на:resultOutput.textContent = input1.value + input2.value;
+
+
+Нужно сделать так чтобы когда начались вычисления
+появилась новая табличка с результатом
+то есть старая исчезает - появляется новая
+старой присвоить hiden - скрыть
+
+Есть два input, если они пустые - один блок,
+когда начинают заполняться блок меняется на другой
+Как при помощи JavaScript это можно сделать?
+
+Важные улучшения в вашем коде
+Динамическая проверка: Скрипт сам смотрит, какой блок открыт (metric или imperial), 
+и не требует заполнения скрытых полей.
+Безопасность ввода: Метод every гарантирует, что блок с результатом не появится раньше времени
+ (например, если в имперской системе ввели только футы ft, но забыли про дюймы in).
+ Удаление лишнего класса: 
+ Обязательно удалите класс active из вашей HTML-разметки у блока .bmi-result.full по умолчанию,
+  иначе при первой загрузке страницы отобразятся сразу оба текстовых блока.
+
+
+  function calculationBmi() {
+  const root = document.querySelector(".form");
+  if (!root) return;
+
+  const selectSystems = root.querySelectorAll('input[name="radio"]');
+  const optionsSystems = root.querySelectorAll(".header__input");
+
+  selectSystems.forEach((select) => {
+    select.addEventListener("change", (event) => {
+      const show = select.dataset.show;
+
+      optionsSystems.forEach((options) => {
+        options.hidden = true;
+        const id = options.getAttribute("id");
+        if (id === show) {
+          options.hidden = false;
+        }
+      });
+      checkBmiInputs();
+    });
+  });
+
+  const inputHeight = root.querySelector("#inputHeight");
+  const inputWeight = root.querySelector("#inputWeight");
+  const result = root.querySelector("#result");
+  const recommendationWeight = root.querySelector("#recommendation-weight");
+  // const bmiResults = root.querySelectorAll(".bmi-result");
+  // Находим блоки результатов
+  const resultEmpty = root.querySelector(".bmi-result.empty");
+  const resultFull = root.querySelector(".bmi-result.full");
+
+  // Функция проверки заполнения полей
+  function checkBmiInputs() {
+    // Находим контейнер, который сейчас НЕ скрыт (активен)
+    const activeContainer = root.querySelector(".header__input:not([hidden])");
+
+    if (!activeContainer) return;
+
+    // Берем инпуты только из активного контейнера
+    const activeInputs = activeContainer.querySelectorAll("input");
+
+    // Проверяем, что КАЖДОЕ активное поле заполнено (длина текста > 0)
+    const allFilled = Array.from(activeInputs).every(
+      (input) => input.value.trim() !== "",
+    );
+
+    if (allFilled) {
+      // Показываем блок с результатом
+      resultEmpty.style.display = "none";
+      resultFull.classList.add("active"); // Используем ваш класс active
+      resultFull.style.display = "block";
+    } else {
+      // Возвращаем приветственный блок
+      resultEmpty.style.display = "block";
+      resultFull.classList.remove("active");
+      resultFull.style.display = "none";
+    }
+  }
+
+  // Навешиваем обработчик на ВСЕ инпуты в обоих блоках
+  const allInputs = document.querySelectorAll(".header__input input");
+  allInputs.forEach((input) => {
+    input.addEventListener("input", checkBmiInputs);
+  });
+
+  // Дополнительно: вызываем проверку при смене вкладок метрическая/имперская
+  // (Добавьте вызов функции checkBmiInputs() в ваш код переключения hidden между metric и imperial)
+
+  function calculationBmi() {
+    const heightValue = parseFloat(inputHeight.value);
+    const weightValue = parseFloat(inputWeight.value);
+
+    if (!heightValue || isNaN(heightValue) || heightValue < 0) {
+      return;
+    }
+    if (!weightValue || isNaN(weightValue) || weightValue < 0) {
+      return;
+    }
+
+    const bmi = (weightValue / ((heightValue * heightValue) / 10000)).toFixed(
+      2,
+    );
+    result.innerText = `${bmi}`;
+    if (heightValue <= 150) {
+      recommendationWeight.innerText = `45kgs-58kgs`;
+    } else if (heightValue >= 155 && heightValue < 160) {
+      recommendationWeight.innerText = `50kgs-63kgs`;
+    } else if (heightValue >= 160 && heightValue < 165) {
+      recommendationWeight.innerText = `52kgs-66kgs`;
+    } else if (heightValue >= 165 && heightValue < 170) {
+      recommendationWeight.innerText = `54kgs-69kgs`;
+    } else if (heightValue >= 170 && heightValue < 175) {
+      recommendationWeight.innerText = `56kgs-72kgs`;
+    } else if (heightValue >= 175 && heightValue < 180) {
+      recommendationWeight.innerText = `59kgs-75kgs`;
+    } else if (heightValue >= 180 && heightValue < 185) {
+      recommendationWeight.innerText = `61kgs-78kgs`;
+    } else if (heightValue >= 185 && heightValue < 190) {
+      recommendationWeight.innerText = `64kgs-82kgs`;
+    } else if (heightValue >= 190) {
+      recommendationWeight.innerText = `66kgs-84kgs`;
+    }
+  }
+
+  inputHeight.addEventListener("input", calculationBmi);
+  inputWeight.addEventListener("input", calculationBmi);
+}
+calculationBmi();

@@ -146,6 +146,10 @@ p {
           border-radius: 50%;
           background: var(--white);
           border: 1px solid var(--grey-500);
+          cursor: pointer;
+          &:hover {
+            border: 2px solid var(--blue-500);
+          }
         }
         &:checked::before {
           background: var(--blue-100);
@@ -168,12 +172,16 @@ p {
     input[type="text"] {
       background: var(--white);
       border: 1px solid var(--grey-500);
+      outline: none;
       border-radius: 12px;
       font-weight: 600;
       font-size: 24px;
       line-height: 29px;
       letter-spacing: -0.05em;
       color: var(--blue-900);
+      &:focus-visible {
+        border: 2px solid var(--blue-500);
+      }
       &::placeholder {
         font-weight: 600;
         font-size: 24px;
@@ -267,27 +275,69 @@ p {
         left: 460px;
       }
     }
+    /* для того чтобы, после ввода данных
+в инпуте цвет плейсхолдера - был белый */
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:focus {
+      -webkit-box-shadow: 0 0 0px 40rem var(--white) inset;
+    }
   }
   .bmi-result {
-    width: 500px;
-    height: 130px;
     background: var(--blue-500);
     border-radius: 16px 999px 999px 16px;
+
     padding: 32px;
-    h4 {
-      font-weight: 600;
-      font-size: 24px;
-      line-height: 29px;
-      letter-spacing: -0.05em;
-      color: var(--white);
-      margin-block: 0 16px;
+    &.empty {
+      width: 500px;
+      height: 130px;
+      h4 {
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 29px;
+        letter-spacing: -0.05em;
+        color: var(--white);
+        margin-block: 0 16px;
+      }
+      p {
+        font-size: 14px;
+        line-height: 150%;
+        color: var(--white);
+        margin-block: 0;
+      }
     }
-    p {
-      font-size: 14px;
-      line-height: 150%;
-      color: var(--white);
-      margin-block: 0;
+    &.full {
+      width: 500px;
+      height: 166px;
+      .full__title {
+        display: inline-block;
+        width: 206px;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 150%;
+        color: var(--white);
+        span {
+          font-size: 64px;
+          line-height: 110%;
+          letter-spacing: -0.05em;
+        }
+      }
+      .full__text {
+        display: inline-block;
+        width: 206px;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 150%;
+        color: var(--white);
+        span {
+          font-weight: 700;
+          font-size: 14px;
+        }
+      }
     }
+  }
+  .bmi-result.active {
+    display: none;
   }
 }
 
