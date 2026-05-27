@@ -31,10 +31,13 @@ function initBmiCalculator() {
 
   // Главная функция: проверяет заполнение полей и запускает расчет
   function updateBmiDisplay() {
+    // Находим контейнер, который сейчас НЕ скрыт (активен)
     const activeContainer = root.querySelector(".header__input:not([hidden])");
     if (!activeContainer) return;
 
+    // Берем инпуты только из активного контейнера
     const activeInputs = activeContainer.querySelectorAll("input");
+    // Проверяем, что КАЖДОЕ активное поле заполнено (длина текста > 0)
     const allFilled = Array.from(activeInputs).every(
       (input) => input.value.trim() !== "",
     );
@@ -42,11 +45,13 @@ function initBmiCalculator() {
     if (allFilled) {
       // Считаем ИМТ перед показом блока
       calculateAndRenderBmi(activeContainer.id);
-
+      // Показываем блок с результатом
       resultEmpty.style.display = "none";
+      // Используем ваш класс active
       resultFull.classList.add("active");
       resultFull.style.display = "block";
     } else {
+      // Возвращаем приветственный блок
       resultEmpty.style.display = "block";
       resultFull.classList.remove("active");
       resultFull.style.display = "none";
@@ -64,6 +69,7 @@ function initBmiCalculator() {
       const hCm = parseFloat(root.querySelector("#inputHeight").value);
       const wKg = parseFloat(root.querySelector("#inputWeight").value);
 
+      // если число введенное пустое или не меньше нуля или является не числом(возможно строка)
       if (isNaN(hCm) || isNaN(wKg) || hCm <= 0 || wKg <= 0) return;
 
       const hM = hCm / 100;
@@ -116,10 +122,3 @@ function initBmiCalculator() {
 // Запуск при загрузке документа
 initBmiCalculator();
 
-/**
- * описать код - что и как означает каждая фраза
- * Почему при переключении скачет блок?
- *
- * Сделать новую таблицу с результами
- * подобрать идельный вес - с результами
- */

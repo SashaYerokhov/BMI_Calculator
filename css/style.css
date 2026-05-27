@@ -27,7 +27,7 @@
 body {
   font-family: "InterRegular", sans-serif;
   background: var(--white);
-  font-size: 16px;
+  font-size: 1rem;
 }
 
 img {
@@ -51,20 +51,20 @@ p {
 }
 .container {
   box-sizing: border-box;
-  max-width: 1180px;
+  max-width: 73.75rem;
   margin-inline: auto;
-  padding-inline: 10px;
+  padding-inline: 0.625rem;
 }
 
 .header {
-  padding-block: 88px 121px;
+  padding-block: 5.5rem 7.5625rem;
   position: relative;
   z-index: 2;
   &::before {
     position: absolute;
     content: "";
-    width: 1002px;
-    height: 737px;
+    width: 62.625rem;
+    height: 46.0625rem;
     background: linear-gradient(90deg, rgba(214, 252, 254, 0) 0%, #d6e6fe 100%);
     border-radius: 0px 0px 35px 35px;
     top: 0;
@@ -75,61 +75,59 @@ p {
     margin-block-end: 24px;
   }
   .header__content {
-    width: 1160px;
+    width: 72.5rem;
+    height: 35.25rem;
     display: flex;
     align-items: center;
   }
   .header__text {
-    min-width: 564px;
+    min-width: 35.25rem;
   }
   h1 {
-    width: 450px;
+    width: 28.125rem;
     font-weight: 600;
     font-size: clamp(3rem, calc(2.648rem + 1.502vw), 4rem);
     line-height: 110%;
     letter-spacing: -0.05em;
     color: var(--blue-900);
-    margin-block-end: 32px;
+    margin-block-end: 2rem;
   }
   p {
-    width: 465px;
+    width: 29.0625rem;
     line-height: 150%;
     color: var(--grey-500);
   }
   .form {
     box-sizing: border-box;
-    display: flex;
-    align-items: flex-start;
-    flex-direction: column;
-    row-gap: 32px;
-    /* width: 564px; */
-    /* height: 440px; */
-    padding: 32px;
+    padding: 2rem;
+    height: auto;
     background: var(--white);
     box-shadow: 16px 32px 56px rgba(143, 174, 207, 0.25);
     border-radius: 16px;
     h4 {
       font-weight: 600;
-      font-size: 24px;
+      font-size: 1.5rem;
       line-height: 29px;
       letter-spacing: -0.05em;
       color: var(--blue-900);
+      margin-block-end: 32px;
     }
     .header__select {
-      width: 500px;
+      width: 31.25rem;
       display: flex;
       align-items: center;
+      margin-block-end: 2rem;
       .header__select-metric {
-        margin-right: 165px;
+        margin-inline-end: 10.3125rem;
       }
       label {
         display: block;
         position: relative;
         font-weight: 600;
-        font-size: 16px;
+        font-size: 1rem;
         line-height: 150%;
         color: var(--blue-900);
-        padding-inline-start: 45px;
+        padding-inline-start: 2.8125rem;
       }
 
       input[type="radio"] {
@@ -175,7 +173,7 @@ p {
       outline: none;
       border-radius: 12px;
       font-weight: 600;
-      font-size: 24px;
+      font-size: 1.5rem;
       line-height: 29px;
       letter-spacing: -0.05em;
       color: var(--blue-900);
@@ -184,7 +182,7 @@ p {
       }
       &::placeholder {
         font-weight: 600;
-        font-size: 24px;
+        font-size: 1.5rem;
         line-height: 29px;
         letter-spacing: -0.05em;
         color: var(--grey-500);
@@ -192,12 +190,12 @@ p {
     }
     label {
       display: block;
-      margin-block-end: 8px;
+      margin-block-end: 0.5rem;
     }
     .symbol {
       position: absolute;
       font-weight: 600;
-      font-size: 24px;
+      font-size: 1.5rem;
       line-height: 29px;
       letter-spacing: -0.05em;
       color: var(--blue-500);
@@ -206,6 +204,7 @@ p {
     }
     .header__input.metric {
       position: relative;
+      margin-block-end: 2rem;
       .header__input-height,
       .header__input-weight {
         display: inline-block;
@@ -213,14 +212,14 @@ p {
         vertical-align: middle; /* Выравнивание по вертикали */
         input[type="text"] {
           display: block;
-          width: 238px;
-          height: 61px;
-          padding: 16px 24px;
+          width: 14.875rem;
+          height: 3.8125rem;
+          padding: 1rem 1.5rem;
           &::placeholder {
-            width: 131px;
-            height: 29px;
+            width: 8.1875rem;
+            height: 1.8125rem;
             font-weight: 600;
-            font-size: 24px;
+            font-size: 1.5rem;
             line-height: 29px;
             letter-spacing: -0.05em;
             color: var(--grey-500);
@@ -237,22 +236,24 @@ p {
       }
     }
     .header__input.imperial {
-      /* position: relative; */
+      margin-block-end: 32px;
       .header__input-height,
       .header__input-weight {
         position: relative;
         font-size: 0;
         label {
-          font-size: 14px;
+          font-size: 0.875rem;
+          line-height: 150%;
+          color: var(--grey-500);
         }
         input[type="text"] {
           display: inline-block;
-          font-size: 24px;
+          font-size: 1.5rem;
           margin-inline-start: 13px;
           vertical-align: middle;
-          width: 238px;
-          height: 77px;
-          padding: 24px;
+          width: 14.875rem;
+          height: 4.8125rem;
+          padding: 1.5rem;
         }
       }
       .header__input-height {
@@ -286,52 +287,51 @@ p {
   .bmi-result {
     background: var(--blue-500);
     border-radius: 16px 999px 999px 16px;
-
-    padding: 32px;
+    padding: 2rem;
     &.empty {
-      width: 500px;
-      height: 130px;
+      width: 31.25rem;
+      height: 8.125rem;
       h4 {
         font-weight: 600;
-        font-size: 24px;
+        font-size: 1.5rem;
         line-height: 29px;
         letter-spacing: -0.05em;
         color: var(--white);
         margin-block: 0 16px;
       }
       p {
-        font-size: 14px;
+        font-size: 0.875rem;
         line-height: 150%;
         color: var(--white);
         margin-block: 0;
       }
     }
     &.full {
-      width: 500px;
-      height: 166px;
+      width: 31.25rem;
+      height: 10.375rem;
       .full__title {
         display: inline-block;
-        width: 206px;
+        width: 12.875rem;
         font-weight: 600;
-        font-size: 16px;
+        font-size: 1rem;
         line-height: 150%;
         color: var(--white);
         span {
-          font-size: 64px;
+          font-size: clamp(3rem, calc(2.648rem + 1.502vw), 4rem);
           line-height: 110%;
           letter-spacing: -0.05em;
         }
       }
       .full__text {
         display: inline-block;
-        width: 206px;
-        font-size: 14px;
+        width: 12.875rem;
+        font-size: 0.875rem;
         font-weight: 400;
         line-height: 150%;
         color: var(--white);
         span {
           font-weight: 700;
-          font-size: 14px;
+          font-size: 0.875rem;
         }
       }
     }
@@ -345,11 +345,11 @@ p {
   display: flex;
   align-items: center;
   column-gap: 131px;
-  margin-block-end: 86px;
+  margin-block-end: 5.375rem;
   background-image: url("../assets/images/pattern-curved-line-left.svg");
   background-repeat: no-repeat;
   background-position: 93% -17%;
-  padding-block-start: 52px;
+  padding-block-start: 3.25rem;
   img {
     width: 534px;
   }
@@ -359,7 +359,7 @@ p {
     line-height: 110%;
     letter-spacing: -0.05em;
     color: var(--blue-900);
-    margin-block-end: 32px;
+    margin-block: 0 2rem;
   }
   p {
     line-height: 150%;
@@ -369,8 +369,8 @@ p {
 .recommendation {
   position: relative;
   z-index: 2;
-  margin-block-end: 115px;
-  padding-block: 92.5px;
+  margin-block-end: 7.1875rem;
+  padding-block: 5.7813rem;
   &::before {
     position: absolute;
     content: "";
@@ -386,10 +386,10 @@ p {
   .recommendation__block {
     display: flex;
     align-items: center;
-    column-gap: 32px;
+    column-gap: 2rem;
   }
   img {
-    margin-block-end: 48px;
+    margin-block-end: 3rem;
   }
   .recommendation__text {
     display: flex;
@@ -397,7 +397,7 @@ p {
     row-gap: 24px;
     h4 {
       font-weight: 600;
-      font-size: 24px;
+      font-size: 1.5rem;
       line-height: 29px;
       letter-spacing: -0.05em;
       color: var(--blue-900);
@@ -412,15 +412,15 @@ p {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   gap: 32px;
-  padding: 40px;
+  padding: 2.5rem;
   align-items: start;
-  margin-block-end: 115px;
+  margin-block-end: 7.1875rem;
   background-image: url("../assets/images/pattern-curved-line-right.svg");
   background-repeat: no-repeat;
   background-position: 20% 50%;
   .limitations__main {
-    width: 564px;
-    height: 181px;
+    width: 35.25rem;
+    height: 11.3125rem;
     grid-column: 1 / 4;
     h2 {
       font-weight: 600;
@@ -436,9 +436,9 @@ p {
     }
   }
   .limitations__block {
-    padding: 32px;
-    width: 365px;
-    height: 232px;
+    padding: 2rem;
+    width: 22.8125rem;
+    height: 14.5rem;
     background: var(--white);
     box-shadow: 16px 32px 56px rgba(143, 174, 207, 0.25);
     border-radius: 16px;
@@ -489,7 +489,7 @@ p {
   }
   .age__block,
   .muscle__block {
-    height: 184px;
+    height: 11.5rem;
   }
   .gender__block {
     grid-column: 4 / 6;
@@ -505,5 +505,318 @@ p {
   }
   .race__block {
     grid-column: 4 / 6;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    max-width: 44.125rem;
+  }
+  .header {
+    min-height: 51.8125rem;
+    padding-block: 32px 0;
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+    margin-block-end: 88px;
+    &::before {
+      width: 768px;
+      height: 640px;
+    }
+    .header__logo {
+      margin-block-end: 0;
+      img {
+        width: 40px;
+        height: 40px;
+      }
+    }
+    .header__content {
+      width: 42.875rem;
+      flex-direction: column;
+      row-gap: 40px;
+    }
+    .header__text {
+      max-width: 42.875rem;
+    }
+    h1 {
+      width: 24.375rem;
+      text-align: center;
+      margin-block: 0 1.5rem;
+      margin-inline: auto;
+    }
+    p {
+      width: 42.875rem;
+      text-align: center;
+    }
+    .form {
+      .header__select {
+        .header__select-metric {
+          margin-inline-end: 232px;
+        }
+      }
+      .header__input.metric {
+        .header__input-height,
+        .header__input-weight {
+          input[type="text"] {
+            width: 17.6875rem;
+            height: 4.8125rem;
+          }
+          .cm {
+            top: 45px;
+            left: 242px;
+          }
+          .kg {
+            top: 45px;
+            left: 550px;
+          }
+        }
+      }
+      .bmi-result p {
+        text-align: left;
+      }
+    }
+  }
+  .hero {
+    /* Отключаем перенос строк, чтобы элементы оставались в одну линию */
+    flex-wrap: nowrap;
+    column-gap: 72px;
+    background-image: none;
+    margin-block-end: 5.9375rem;
+    img {
+      /* Фиксируем ширину картинки */
+      width: 27.1875rem;
+      /* Запрещаем флекс-контейнеру сжимать изображение */
+      flex-shrink: 0;
+      /* Сдвигаем картинку влево на ширину её отступа */
+      margin-left: -6.5625rem;
+    }
+    div {
+      /* Задаем блоку с контентом занимать всё оставшееся пространство */
+      flex-grow: 1;
+    }
+  }
+  .recommendation {
+    padding-block: 3.75rem;
+    margin-block-end: 6.0056rem;
+    .recommendation__block {
+      flex-direction: column;
+      row-gap: 40px;
+    }
+    img {
+      margin: 0;
+    }
+    .recommendation__content {
+      display: flex;
+      align-items: center;
+      column-gap: 40px;
+    }
+  }
+  .limitations {
+    background-image: none;
+    grid-template-columns: repeat(4, 1fr);
+    .limitations__main {
+      width: 42.875rem;
+      height: 8.6875rem;
+      grid-column: 1 / span 4;
+      grid-row: 1 / span 1;
+      text-align: center;
+    }
+    .limitations__block {
+      width: 20.9375rem;
+      .age__block,
+      .muscle__block {
+        height: 14.5rem;
+        padding-block-end: 80px;
+      }
+    }
+    .gender__block {
+      grid-column: 1 / span 2;
+      grid-row: 2 / span 1;
+    }
+    .age__block {
+      grid-column: 3 / span 2;
+      grid-row: 2 / span 1;
+      height: 14.5rem;
+      padding-block-end: 80px;
+    }
+    .muscle__block {
+      grid-column: 1 / span 2;
+      grid-row: 3 / span 1;
+      height: 14.5rem;
+      padding-block-end: 80px;
+    }
+    .pregnancy__block {
+      grid-column: 3 / span 2;
+      grid-row: 3 / span 1;
+    }
+    .race__block {
+      grid-column: 2 / span 2;
+      grid-row: 4 / span 1;
+    }
+  }
+}
+
+@media (max-width: 375px) {
+  .container {
+    max-width: 21.75rem;
+  }
+  .header {
+    min-height: 69.5rem;
+    padding-block-end: 0;
+    row-gap: 32px;
+    margin-block-end: 64px;
+    &::before {
+      width: 23.4375rem;
+      height: 40rem;
+    }
+    .header__content {
+      width: 20.5rem;
+      row-gap: 32px;
+    }
+    .header__text {
+      min-width: 20.5rem;
+    }
+    h1 {
+      width: 20.5rem;
+    }
+    p {
+      width: 20.5rem;
+      margin-block: 0;
+    }
+    .form {
+      padding: 1.5rem;
+      .header__select {
+        width: 17.5rem;
+        .header__select-metric {
+          margin-inline-end: 4.0625rem;
+        }
+      }
+      .header__input.metric {
+        .header__input-height {
+          margin-block-end: 1rem;
+        }
+        .header__input-height,
+        .header__input-weight {
+          input[type="text"] {
+            width: 280px;
+            height: 77px;
+          }
+          .kg {
+            top: 170px;
+            left: 246px;
+          }
+        }
+      }
+      .header__input.imperial {
+        margin-block-end: 24px;
+        .header__input-height,
+        .header__input-weight {
+          input[type="text"] {
+            width: 126px;
+            height: 77px;
+          }
+          .ft {
+            top: 50px;
+            left: 98px;
+          }
+          .in {
+            top: 50px;
+            left: 238px;
+          }
+          .st {
+            top: 50px;
+            left: 98px;
+          }
+          .lbs {
+            top: 50px;
+            left: 224px;
+          }
+        }
+      }
+      .bmi-result {
+        border-radius: 16px;
+        &.empty {
+          width: 280px;
+          height: 180px;
+          h4 {
+            margin-block-end: 16px;
+          }
+          p {
+            width: 216px;
+          }
+        }
+        &.full {
+          width: 280px;
+          height: 257px;
+          .full__title {
+            width: 190px;
+            margin-block-end: 24px;
+          }
+        }
+      }
+    }
+  }
+  .hero {
+    flex-direction: column;
+    gap: 48px 0;
+    padding-block-start: 0;
+    margin-block-end: 3.875rem;
+    img {
+      width: 23.4375rem;
+      margin: 0;
+      flex-shrink: 1;
+    }
+    div {
+      flex-grow: 0;
+    }
+  }
+  .recommendation {
+    padding-block: 3.5rem;
+    .recommendation__content {
+      align-items: start;
+      flex-direction: column;
+      gap: 32px 0;
+    }
+  }
+  .limitations {
+    grid-template-columns: repeat(1, 327px);
+    row-gap: 16px;
+    padding: 0;
+    .limitations__block {
+      padding: 24px;
+    }
+    .limitations__main {
+      width: 20.4375rem;
+      height: 13.1875rem;
+      /* Элементы сами займут одну колонку */
+      grid-column: auto;
+      /* Элементы сами встанут друг за другом */
+      grid-column: auto;
+    }
+    .gender__block {
+      height: 13.5rem;
+      grid-column: auto;
+      grid-row: auto;
+    }
+    .age__block {
+      height: 10.5rem;
+      grid-column: auto;
+      grid-row: auto;
+    }
+    .muscle__block {
+      height: 12rem;
+      grid-column: auto;
+      grid-row: auto;
+    }
+    .pregnancy__block {
+      height: 15rem;
+      grid-column: auto;
+      grid-row: auto;
+    }
+    .race__block {
+      height: 13.5rem;
+      grid-column: auto;
+      grid-row: auto;
+    }
   }
 }
