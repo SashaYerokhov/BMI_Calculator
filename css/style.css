@@ -31,7 +31,7 @@ body {
 }
 
 img {
-  /* Чтобы ширина не выходила за экран изображения */
+ /* To keep the width of the image from going beyond the screen */
   max-width: 100%;
   display: block;
 }
@@ -208,8 +208,8 @@ p {
       .header__input-height,
       .header__input-weight {
         display: inline-block;
-        margin-inline-start: 15px; /* Отступ между инпутами */
-        vertical-align: middle; /* Выравнивание по вертикали */
+        margin-inline-start: 15px; /* Indentation between inputs */
+        vertical-align: middle; /* Vertical alignment */
         input[type="text"] {
           display: block;
           width: 14.875rem;
@@ -276,8 +276,8 @@ p {
         left: 460px;
       }
     }
-    /* для того чтобы, после ввода данных
-в инпуте цвет плейсхолдера - был белый */
+/* so that after entering data
+in the input, the placeholder color is white */
     input:-webkit-autofill,
     input:-webkit-autofill:hover,
     input:-webkit-autofill:focus {
@@ -788,9 +788,9 @@ p {
     .limitations__main {
       width: 20.4375rem;
       height: 13.1875rem;
-      /* Элементы сами займут одну колонку */
+      /* The elements themselves will occupy one column */
       grid-column: auto;
-      /* Элементы сами встанут друг за другом */
+      /* The elements will automatically stand one after another */
       grid-column: auto;
     }
     .gender__block {
