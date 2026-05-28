@@ -656,7 +656,7 @@ in the input, the placeholder color is white */
   }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 500px) {
   .container {
     max-width: 21.75rem;
   }
